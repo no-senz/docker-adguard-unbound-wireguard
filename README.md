@@ -11,9 +11,9 @@ https://github.com/fnazz/oracle-freetier-tf-adguard-unbound-wireguard
 **Naz F**
 
 Docker Compose file contains:
-- adguard - https://hub.docker.com/r/adguard/adguardhome
-- unbound - https://hub.docker.com/r/mvance/unbound
-- wireguard vpn - https://hub.docker.com/r/linuxserver/wireguard
+- AdGuard - https://hub.docker.com/r/adguard/adguardhome
+- Unbound - https://hub.docker.com/r/mvance/unbound
+- WireGuard VPN - https://hub.docker.com/r/linuxserver/wireguard
 
 Contains initial unbound.conf as well
 
@@ -29,7 +29,7 @@ Contains initial unbound.conf as well
 |--------------------|------------|
 | AdGuard Home       | 10.2.0.100 |
 | Unbound            | 10.2.0.200 |
-| Wireguard IP range | 10.6.0.0/24|
+| WireGuard IP range | 10.6.0.0/24|
 
 ## Quickstart
 To get started all you need to do is clone the repository and spin up the containers.
@@ -40,7 +40,7 @@ cd docker-adguard-unbound-wireguard
 docker-compose up -d
 ```
 
-Run folowing from the host get the QR code:
+Run following from the host get the QR code:
 
 ```bash
 ubuntu@adguard-wireguard:~$ sudo docker logs wireguard
@@ -107,13 +107,13 @@ forward-zone:
         forward-tls-upstream: yes
 ```
 
-## Access Adguard Interface (IMPORTANT)
+## Access AdGuard Interface (IMPORTANT)
 While connected to WireGuard, navigate to http://10.2.0.100:3000 first to setup AdGuard Home before DNS query and adblocking to work.
 
 ## Recommended configuration / Split tunnel:
-Modify your wireguard client `AllowedIps` to `10.2.0.0/24` to only tunnel the web panel and DNS traffic.
+Modify your WireGuard client `AllowedIps` to `10.2.0.0/24` to only tunnel the web panel and DNS traffic.
 
-## Wireguard Client Setup:
+## WireGuard Client Setup:
 1. Android: https://serversideup.net/how-to-configure-a-wireguard-android-vpn-client/
 2. iOS: https://serversideup.net/how-to-configure-a-wireguard-ios-client/
 3. Windows 10: https://serversideup.net/how-to-configure-a-wireguard-windows-10-vpn-client/
